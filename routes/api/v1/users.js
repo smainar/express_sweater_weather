@@ -16,12 +16,12 @@ router.post('/', function(req, res, next) {
       })
       .then(user => {
         res.setHeader('Content-Type', 'application/json');
-        res.status(201).send({ apiKey: user.apiKey })
+        res.status(201).send(JSON.stringify({ api_key: user.apiKey }))
       })
     });
   } else {
     res.setHeader('Content-Type', 'application/json');
-    res.status(400).send({ error: 'Password and password confirmation mis-match.' });
+    res.status(400).send(JSON.stringify({ error: 'Password and password confirmation mis-match.' }));
   }
 })
 
