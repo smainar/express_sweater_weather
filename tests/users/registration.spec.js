@@ -1,6 +1,7 @@
 var shell = require('shelljs');
 var request = require("supertest");
-var app = require('./app');
+var app = require('../../app');
+var User = require('../../models').User;
 
 describe('api', () => {
   beforeAll(() => {
@@ -22,8 +23,10 @@ describe('api', () => {
     });
     test('should return an api key', () => {
       return request(app).post('/api/v1/users').then(response => {
-        expect(Object.keys(response.body)).toContain('apiKey')
-        expect(Object.values(response.body)).toBeInstanceOf(Array)
+        expect(Object.keys(response.body)).toContain('api_key')
+        // console.log('response.body', response.body)
+        // console.log('response.bodyFirstKey', typeof Object.values(response.body)[0])
+        // expect(Object.values(response.body)).toBeInstanceOf(Array)
       })
     })
   });
