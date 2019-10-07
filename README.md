@@ -7,27 +7,32 @@ https://salty-headland-76294.herokuapp.com/
 
 Sweater Weather is a RESTful API that fetches the forecast for a specific location (city/state) and exposes six endpoints. This solo project was completed in 7 days as a requirement for the Turing School of Software and Design, Back-End Engineering Program (Module 4).
 
-## System Requirements
-*
-*
+## Dependencies
+* "babel-jest": "^24.9.0"
+* "shelljs": "^0.8.3"
+* "supertest": "^4.0.2"
 
 ## Gems Used
-* Bcrypt
+* bcrypt
+* node-fetch
+* uuidv
+
 
 ## GitHub Repository
 https://github.com/smainar/express_sweater_weather
 
-## Database Diagram
-TBD
-
 ## Instructions
   ### How to setup:
       1. Clone the GitHub repository.
-      2. Go to the directory with the new repo.  Run ...
+      2. Go to the directory with the new repo.  
+      3. Run `npm install`
+      4. Setup database:
+         a) npx sequelize db:create
+         b) npx sequelize db:migrate
 
   ### Run tests:
-        1. Run ...
-        2. To run a single test, example: ...
+        1. Run `npm test`
+        2. To run a single test file, example:
 
 ## Endpoints
 
